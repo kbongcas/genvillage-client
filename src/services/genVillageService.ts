@@ -9,8 +9,30 @@ interface HealthCheckResponse {
   message: string;
 }
 
-interface GenVillageResponse {
-  id: string;
+export interface Village {
+  villageName: string;
+  villageDescription: string;
+  districts: District[];
+  government: string;
+  leader: Leader;
+  npcs: NPC[];
+}
+
+export interface District {
+  districtName: string;
+  districtDescription: string;
+}
+
+export interface Leader {
+  leaderName: string;
+  leaderDescription: string;
+}
+
+export interface NPC {
+  npcName: string;
+  npcRace: string;
+  npcOccupation: string;
+  npcQuote: string;
 }
 
 // Health check function
@@ -19,12 +41,19 @@ const healthCheck = async (): Promise<AxiosResponse<HealthCheckResponse>> => {
 };
 
 // Generate village function
-const genVillage = async (
-  theme: string
-): Promise<AxiosResponse<GenVillageResponse>> => {
-  const data = new FormData();
-  data.append("theme", theme);
-  return (await axios.post)<GenVillageResponse>(baseURL, data);
+const genVillage = async (theme: string): Promise<AxiosResponse<Village>> => {
+  const returned = await axios.post<Village>(
+    `${baseURL}/gen`,
+    {
+      theme: theme,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  return returned;
 };
 
 // Export the service
