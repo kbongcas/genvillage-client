@@ -9,7 +9,7 @@ function App() {
     await genVillageService.healthCheck().then((response) => {
       console.log(response.data);
       if (response.status === 200) {
-        setHealthStatus(response.data as string);
+        setHealthStatus(response.data);
       } else {
         setHealthStatus("Service is down. Please try again later.");
       }
