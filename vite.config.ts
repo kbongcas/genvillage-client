@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   server: {
     proxy: {
-      "/api/genvillage": {
+      "/genvillage": {
         target: "https://genvillagefa.azurewebsites.net",
         changeOrigin: true,
         secure: false,

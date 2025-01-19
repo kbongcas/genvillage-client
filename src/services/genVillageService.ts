@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 // Define the base URL
-const GENVILLAGE_SERVICE_URL = "/api/genvillage";
+const GENVILLAGE_SERVICE_URL = "/genvillage";
 const baseURL = GENVILLAGE_SERVICE_URL;
 
 // Define types for the responses and parameters

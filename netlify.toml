@@ -7,9 +7,8 @@
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   [[redirects]]
-    from = "/api/genvillage/*"
+    from = "/genvillage/*"
     to = "https://genvillagefa.azurewebsites.net/:splat"
-    force = true
     status = 200
 
   [[redirects]]
