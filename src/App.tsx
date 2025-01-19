@@ -52,13 +52,6 @@ function App() {
             <p>{generatedVillage?.leader.leaderDescription}</p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold">Leader</h2>
-            <h1 className="font-semibold">
-              {generatedVillage?.leader.leaderName}
-            </h1>
-            <p>{generatedVillage?.leader.leaderDescription}</p>
-          </div>
-          <div>
             <h2 className="text-2xl font-bold">NPCs</h2>
             {generatedVillage?.npcs.map((npc, index) => (
               <div className=" ml-4 mb-1" key={index}>
